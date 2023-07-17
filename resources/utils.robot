@@ -54,11 +54,11 @@ GetExcelData
     FOR                    ${col}    IN    ${col_names}
         IF    ${colName}==${col}  
             ${colNum}      Set Variable               ${colNumTemp}
+            Log            ${colName}
             BREAK
         ELSE
-            ${colNumTemp} =                         ${colNumTemp} + 1
-        END
-        
+            ${colNumTemp}                         Set Variable                ${colNumTemp}++
+        END    
     END
     #Get Variable Value          ${product_names6}
     #Return From Keyword         ${product_names6}
