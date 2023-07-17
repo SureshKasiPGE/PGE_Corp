@@ -61,7 +61,8 @@ GetExcelData
         
         ${col}     Get From List          ${col_names}       ${i}
         IF    ${colName} == "${col}"
-        ${testdata}=          Read Excel Cell             2                   ${i}
+        ${colNum} =                Evaluate       ${i}+1
+        ${testdata}=          Read Excel Cell             2                   ${colNum}
             #${colNum}      Set Variable               ${i}
             Log            ${testdata}
             BREAK
