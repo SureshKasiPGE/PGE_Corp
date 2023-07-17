@@ -47,7 +47,7 @@ Setup Browser
 End suite
     Close All Browsers
 
-GetExcelValue
+GetExcelData
     [Arguments]                 ${excel_workbook}     ${colName}
     Open Excel Document         ${excel_workbook}         doc_1
     ${row_names}=          Read Excel Row             1
