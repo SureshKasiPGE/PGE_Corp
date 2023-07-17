@@ -54,7 +54,7 @@ GetExcelData
     ${col_names}=          Read Excel Row             1
     
     
-    ${count}                 Count Values In List            ${col_names}     ","      
+    ${count}                 Count Values In List            ${col_names}     ""      
     ${count}               Evaluate                    ${count}+3
     Log                      ${count}
     FOR              ${i}                        IN RANGE                    ${count}
