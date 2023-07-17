@@ -55,7 +55,7 @@ GetExcelData
     
     
     ${count}                 Count Values In List            ${col_names}     ","      
-    ${count}               Evaluate                    ${count}+1
+    ${count}               Evaluate                    ${count}+2
     Log                      ${count}
     FOR              ${i}                        IN RANGE                    ${count}
         
@@ -63,6 +63,7 @@ GetExcelData
         IF    ${colName} == "${col}"
             ${colNum}      Set Variable               ${i}
             Log            ${colName}
+            BREAK
              
          ELSE
              ${i}               Evaluate                    ${i}+1
