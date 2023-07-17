@@ -7,7 +7,7 @@ Library                 ../libraries/GitOperations.py
 *** Variables ***
 ${BROWSER}              chrome
 ${webshop}              https://qentinelqi.github.io/shop/
-${excel_worksheet}      ${CURDIR}/../data/products_worksheet.xlsx
+${excel_worksheet}      ${CURDIR}/../PGE.xlsx
 ${git_branch}           main
 
 *** Keywords ***
@@ -17,3 +17,10 @@ Setup Browser
 
 End Suite
     Close All Browsers
+
+GetExcelValue
+    [Arguments]                 ${rowNum}                    ${colNum}        ${sheet_names}
+    Open Excel Document         ${excel_worksheet}          products
+    ${product_names6}=          Read Excel Cell             ${rowNum}         ${colNum}        ${sheet_names}
+    Get Variable Value          ${product_names6}
+    Return From Keyword         ${product_names6}
