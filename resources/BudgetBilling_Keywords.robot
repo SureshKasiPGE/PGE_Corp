@@ -8,7 +8,7 @@ Library                         Collections
 Library                         SeleniumLibrary
 Library                         DateTime
 
-Resource                        ../utils.robot
+Resource                        ../resources/utils.robot
 
 *** Variables ***
 #xpath
