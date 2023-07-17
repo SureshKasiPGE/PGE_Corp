@@ -51,15 +51,21 @@ GetExcelData
     [Arguments]                 ${excel_workbook}     ${colName}
     Open Excel Document         ${excel_workbook}         doc_1
     ${col_names}=          Read Excel Row             1
-    FOR                    ${col}    IN    ${col_names}
-        IF    ${colName}==${col}  
-            ${colNum}      Set Variable               ${colNumTemp}
+    ${count}                 GetElementCount               ${col_names}
+    Log                      ${count}
+    FOR                                               ${i}                        IN RANGE                    ${count}
+        
+        ${col}     GetText                     ${col_names}/[${i}]
+        IF    "${colName}" == "${col}"
+            ${colNum}      Set Variable               ${i}
             Log            ${colName}
-            BREAK
-        ELSE
-            ${colNumTemp}                         Set Variable                ${colNumTemp}++
-        END    
+             
+         ELSE
+             ${i}               Evaluate                    ${i}+1
+             Continue For Loop
+        END
     END
+      
     #Get Variable Value          ${product_names6}
     #Return From Keyword         ${product_names6}
 
