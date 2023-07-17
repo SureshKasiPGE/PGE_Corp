@@ -59,7 +59,7 @@ GetExcelData
     Log                      ${count}
     FOR              ${i}                        IN RANGE                    ${count}
         
-        ${col}     Get From List                 1
+        ${col}     Get From List          ${col_names}       ${i}
         IF    "${colName}" == "${col}"
             ${colNum}      Set Variable               ${i}
             Log            ${colName}
