@@ -54,13 +54,13 @@ GetExcelData
     ${col_names}=          Read Excel Row             1
     
     
-    ${count}                 Count Values In List            ${col_names}     ,      
+    ${count}                 Count Values In List            ${col_names}     ","      
     ${count}               Evaluate                    ${count}+1
     Log                      ${count}
     FOR              ${i}                        IN RANGE                    ${count}
         
         ${col}     Get From List          ${col_names}       ${i}
-        IF    "${colName}" == "${col}"
+        IF    ${colName} == "${col}"
             ${colNum}      Set Variable               ${i}
             Log            ${colName}
              
