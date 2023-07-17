@@ -13,10 +13,10 @@ Suite Teardown                  End suite
 BudgetBilling_nonenrolled1
     [Documentation]                                Executing the accound for non enrolled customer
     [tags]                                         BudgetBilling        Regression        Sanity
-    ${Environment}                              Set Variable                   Regression
-    GoTo                        https://pgeservicetest.pge.com/myaccount  
-    ${product_names6}                        GetExcelValue                        2            2             Data     ${excel_worksheet}
-    Get Variable Value                       ${product_names6}
+    #${Environment}                              Set Variable                   Regression
+    #GoTo                        https://pgeservicetest.pge.com/myaccount  
+    GetExcelData                ../data/PGE.xlsx                      1
+    #Get Variable Value                       ${product_names6}
 
 
 
