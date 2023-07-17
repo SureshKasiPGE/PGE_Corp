@@ -8,7 +8,7 @@ Library                         QVision
 *** Variables ***
 
 ${Environment}             Regression
-
+${colNumTemp}        1
 # IMPORTANT: Please read the readme.txt to understand needed variables and how to handle them!!
 ${BROWSER}                      Chrome
 ${home_url}                     ${login_url}/lightning/page/home
@@ -50,8 +50,16 @@ End suite
 GetExcelData
     [Arguments]                 ${excel_workbook}     ${colName}
     Open Excel Document         ${excel_workbook}         doc_1
-    ${row_names}=          Read Excel Row             1
-    Log                    ${row_names}
+    ${col_names}=          Read Excel Row             1
+    FOR                    ${col}    IN    ${col_names}
+        IF    ${colName}==${col}  
+            ${colNum}      Set Variable               ${colNumTemp}
+            BREAK
+        ELSE
+            ${colNumTemp} =                         ${colNumTemp} + 1
+        END
+        
+    END
     #Get Variable Value          ${product_names6}
     #Return From Keyword         ${product_names6}
 
