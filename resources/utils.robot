@@ -48,8 +48,8 @@ Setup Browser
 End suite
     Close All Browsers
 
-GetExcelData
-    [Arguments]                 ${excel_workbook}           ${colName}
+Get Excel Cell Value By Column Name
+    [Arguments]                 ${excel_workbook}           ${colName}    ${rowNum}=2
     Open Excel Document         ${excel_workbook}           doc_1
     ${col_names}=               Read Excel Row              1
 
@@ -62,7 +62,7 @@ GetExcelData
         ${col}                  Get From List               ${col_names}                ${i}
         IF                      ${colName} == "${col}"
             ${colNum} =         Evaluate                    ${i}+1
-            ${testdata}=        Read Excel Cell             2                           ${colNum}
+            ${testdata}=        Read Excel Cell             ${rowNum}                           ${colNum}
             #${colNum}          Set Variable                ${i}
             Log                 ${testdata}
             BREAK
