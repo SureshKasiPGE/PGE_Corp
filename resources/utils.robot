@@ -55,9 +55,8 @@ GetExcelData
     
     
     ${count}                 Count Values In List            ${col_names}     ","      
-    ${count}               Evaluate                    ${count}+2
+    ${count}               Evaluate                    ${count}+3
     Log                      ${count}
-    ${i}                     Set Variable              1
     FOR              ${i}                        IN RANGE                    ${count}
         
         ${col}     Get From List          ${col_names}       ${i}
