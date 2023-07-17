@@ -61,7 +61,7 @@ GetExcelData
         
         ${col}     Get From List          ${col_names}       ${i}
         IF    ${colName} == "${col}"
-        ${testdata}=          Read Excel Cell             1                   ${i}
+        ${testdata}=          Read Excel Cell             2                   ${i}
             #${colNum}      Set Variable               ${i}
             Log            ${testdata}
             BREAK
@@ -74,6 +74,7 @@ GetExcelData
     #${testdata}=          Read Excel Cell             1                   ${colNum}
     #Get Variable Value          ${testdata}
     Log                   ${testdata}
+    Close Current Excel Document
     Return From Keyword         ${testdata}
       
     #Get Variable Value          ${product_names6}
