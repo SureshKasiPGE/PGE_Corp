@@ -48,15 +48,12 @@ End suite
     Close All Browsers
 
 GetExcelValue
-    [Arguments]                 ${rowNum}                    ${colNum}        ${sheet_names}   ${excell} 
-    IF                         '${Environment}'=='Regression'
-        Open Excel Document         ${excell}          products
-    ELSE IF                         '${Environment}'=='SIT'
-        Open Excel Document         ${excel_worksheet1}          products
-    END
-    ${product_names6}=          Read Excel Cell             ${rowNum}                   ${colNum}        ${sheet_names}
-    Get Variable Value          ${product_names6}
-    Return From Keyword         ${product_names6}
+    [Arguments]                 ${excel_workbook}     ${colName}
+    Open Excel Document         ${excel_workbook}         doc_1
+    ${row_names}=          Read Excel Row             1
+    Log                    ${row_names}
+    #Get Variable Value          ${product_names6}
+    #Return From Keyword         ${product_names6}
 
     #Mrunal
 home_url
