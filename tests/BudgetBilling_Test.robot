@@ -15,7 +15,7 @@ BudgetBilling_nonenrolled1
     [tags]                                         BudgetBilling        Regression        Sanity
     #${Environment}                              Set Variable                   Regression
     #GoTo                        https://pgeservicetest.pge.com/myaccount  
-    GetExcelData                ${CURDIR}/../data/PGE.xlsx                      username
+    GetExcelData                ${CURDIR}/../data/PGE.xlsx                      "username"
     #Get Variable Value                       ${product_names6}
 
 
