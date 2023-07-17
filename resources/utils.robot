@@ -70,6 +70,10 @@ GetExcelData
              Continue For Loop
         END
     END
+    ${testdata}=          Read Excel Cell             2                   ${colNum}
+    #Get Variable Value          ${testdata}
+    Log                   ${testdata}
+    Return From Keyword         ${testdata}
       
     #Get Variable Value          ${product_names6}
     #Return From Keyword         ${product_names6}
