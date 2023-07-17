@@ -4,6 +4,7 @@ Library                         String
 Library                         ExcelLibrary
 Library                         SeleniumLibrary
 Library                         QVision
+Library                         Collections
 
 *** Variables ***
 
@@ -51,11 +52,14 @@ GetExcelData
     [Arguments]                 ${excel_workbook}     ${colName}
     Open Excel Document         ${excel_workbook}         doc_1
     ${col_names}=          Read Excel Row             1
-    ${count}                 GetElementCount               ${col_names}
+    
+    
+    ${count}                 Count Values In List            ${col_names}     ,      
+    ${count}               Evaluate                    ${count}+1
     Log                      ${count}
-    FOR                                               ${i}                        IN RANGE                    ${count}
+    FOR              ${i}                        IN RANGE                    ${count}
         
-        ${col}     GetText                     ${col_names}/[${i}]
+        ${col}     Get From List                 1
         IF    "${colName}" == "${col}"
             ${colNum}      Set Variable               ${i}
             Log            ${colName}
