@@ -1,6 +1,6 @@
 *** Settings ***
-Resource                        ../resource/utils.robot
-Resource                        ../resource/BudgetBilling_Keywords.robot
+Resource                        ../resources/utils.robot
+Resource                        ../resources/BudgetBilling_Keywords.robot
 Library                         QForce
 
 Suite Setup                     Setup Browser
