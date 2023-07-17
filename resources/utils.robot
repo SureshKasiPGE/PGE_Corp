@@ -44,7 +44,6 @@ Setup Browser
     SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
     # Evaluate                  random.seed()               random                      # initialize random generator
 
-
 End suite
     Close All Browsers
 
@@ -52,34 +51,20 @@ Get Excel Cell Value By Column Name
     [Arguments]                 ${excel_workbook}           ${colName}    ${rowNum}=2
     Open Excel Document         ${excel_workbook}           doc_1
     ${col_names}=               Read Excel Row              1
-
-
     ${count}                    Get Length                  ${col_names}
-    #${count}                   Evaluate                    ${count}+3
-    Log                         ${count}
     FOR                         ${i}                        IN RANGE                    ${count}
-
         ${col}                  Get From List               ${col_names}                ${i}
         IF                      ${colName} == "${col}"
             ${colNum} =         Evaluate                    ${i}+1
             ${testdata}=        Read Excel Cell             ${rowNum}                           ${colNum}
-            #${colNum}          Set Variable                ${i}
-            Log                 ${testdata}
             BREAK
-
         ELSE
             ${i}                Evaluate                    ${i}+1
             Continue For Loop
         END
     END
-    #${testdata}=               Read Excel Cell             1                           ${colNum}
-    #Get Variable Value         ${testdata}
-    Log                         ${testdata}
     Close Current Excel Document
     Return From Keyword         ${testdata}
-
-    #Get Variable Value         ${product_names6}
-    #Return From Keyword        ${product_names6}
 
     #Mrunal
 home_url
