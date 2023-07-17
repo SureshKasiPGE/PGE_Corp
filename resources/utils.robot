@@ -8,15 +8,15 @@ Library                         Collections
 
 *** Variables ***
 
-${Environment}             Regression
-${colNumTemp}        1
+${Environment}                  Regression
+${colNumTemp}                   1
 # IMPORTANT: Please read the readme.txt to understand needed variables and how to handle them!!
 ${BROWSER}                      Chrome
 ${home_url}                     ${login_url}/lightning/page/home
 ${queryEditorText}=             //*[@id\='queryEditorText']
 ${SelectFeature}=               //*[@role\='menuitem' and text()\='More']
 ${excel_worksheet}              ${CURDIR}/../PGE.xlsx
-${excel_worksheet1}              ${CURDIR}/../PGE_SIT.xlsx
+${excel_worksheet1}             ${CURDIR}/../PGE_SIT.xlsx
 
 #vidhya pod-4 variables
 #OT-400
@@ -49,37 +49,37 @@ End suite
     Close All Browsers
 
 GetExcelData
-    [Arguments]                 ${excel_workbook}     ${colName}
-    Open Excel Document         ${excel_workbook}         doc_1
-    ${col_names}=          Read Excel Row             1
-    
-    
-    ${count}                 Get Length            ${col_names}           
-    #${count}               Evaluate                    ${count}+3
-    Log                      ${count}
-    FOR              ${i}                        IN RANGE                    ${count}
-        
-        ${col}     Get From List          ${col_names}       ${i}
-        IF    ${colName} == "${col}"
-        ${colNum} =                Evaluate       ${i}+1
-        ${testdata}=          Read Excel Cell             2                   ${colNum}
-            #${colNum}      Set Variable               ${i}
-            Log            ${testdata}
+    [Arguments]                 ${excel_workbook}           ${colName}
+    Open Excel Document         ${excel_workbook}           doc_1
+    ${col_names}=               Read Excel Row              1
+
+
+    ${count}                    Get Length                  ${col_names}
+    #${count}                   Evaluate                    ${count}+3
+    Log                         ${count}
+    FOR                         ${i}                        IN RANGE                    ${count}
+
+        ${col}                  Get From List               ${col_names}                ${i}
+        IF                      ${colName} == "${col}"
+            ${colNum} =         Evaluate                    ${i}+1
+            ${testdata}=        Read Excel Cell             2                           ${colNum}
+            #${colNum}          Set Variable                ${i}
+            Log                 ${testdata}
             BREAK
-             
-         ELSE
-             ${i}               Evaluate                    ${i}+1
-             Continue For Loop
+
+        ELSE
+            ${i}                Evaluate                    ${i}+1
+            Continue For Loop
         END
     END
-    #${testdata}=          Read Excel Cell             1                   ${colNum}
-    #Get Variable Value          ${testdata}
-    Log                   ${testdata}
+    #${testdata}=               Read Excel Cell             1                           ${colNum}
+    #Get Variable Value         ${testdata}
+    Log                         ${testdata}
     Close Current Excel Document
     Return From Keyword         ${testdata}
-      
-    #Get Variable Value          ${product_names6}
-    #Return From Keyword         ${product_names6}
+
+    #Get Variable Value         ${product_names6}
+    #Return From Keyword        ${product_names6}
 
     #Mrunal
 home_url
@@ -230,7 +230,7 @@ ExecuteQuery
     [Arguments]                 ${query}
     UseTable                    ${queryEditorText}
     ClickText                   ${queryEditorText}
-    TypeText                    Enter SOQL or SOSL query: SELECT columns FROM type WHERE predicates | FIND what IN type FIELDS RETURNING type(columns)[...]         ${query}    delay=10
+    TypeText                    Enter SOQL or SOSL query: SELECT columns FROM type WHERE predicates | FIND what IN type FIELDS RETURNING type(columns)[...]    ${query}    delay=10
     ClickText                   Execute                     delay=3
 
 GetSandboxObjects
@@ -304,14 +304,14 @@ VerifyErrorMsgOfInvalidUsernameorPassword                        #OT140
     ELSE IF                     '${Error_Msg}'=='${InvalidPassword_errormsg}'
         Log                     Invalid password
         ClearField
-        ELSE
+    ELSE
         ClearField
         ClearField
         Log                     valid username and password are entered
     END
 
 TextVerification                
-    [Arguments]                 ${Verifying_For}            ${ParaName}                 ${Para1}                    ${Para2}         ${Para3}           ${Para4}    ${Para5}    ${Para6}    ${Para7}    ${Para8}
+    [Arguments]                 ${Verifying_For}            ${ParaName}                 ${Para1}                    ${Para2}         ${Para3}      ${Para4}    ${Para5}    ${Para6}    ${Para7}    ${Para8}
     Log                         ${Verifying_For}
     VerifyText                  ${ParaName}
     VerifyTexts                 ${Para1}
