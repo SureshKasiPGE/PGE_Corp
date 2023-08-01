@@ -2,9 +2,6 @@
 Library                         QWeb
 Library                         ExcelLibrary
 Library                         String
-Library                         QForce
-Library                         QVision
-Library                         BuiltIn
 Library                         ../libraries/GitOperations.py
 
 *** Variables ***
