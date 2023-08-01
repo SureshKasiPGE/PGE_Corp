@@ -15,18 +15,21 @@ AEM_Url
         Get Variable Value                            ${count}
         FOR               ${j}                        IN RANGE    3                        ${count}     
             ${Header_type}=         Get Excel Cell Value By Column Name     ${j}           1          AEM
+            
             IF   '${Header_type}' == 'Link_Text'                     
                 ${Link_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
-                Sleep                  3
-                ClickText              ${Link_value}
-                Sleep                  3
-                SwitchWindow           2
-                Sleep                  3
-                CloseWindow  
-            ELSE IF   '${Text_value}' != 'Link_Text' & '${Text_value}' != '${EMPTY}'
+                IF   '${Link_value}' != '${EMPTY}'
+                    Sleep                  3
+                    ClickText              ${Link_value}
+                    Sleep                  3
+                    SwitchWindow           2
+                    Sleep                  3
+                    CloseWindow  
+            ELSE IF   '${Text_value}' != 'Link_Text'
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
-                Sleep                  3
-                VerifyText             ${Text_value}                 
+                IF   '${Text_value}' != '${EMPTY}'
+                    Sleep                  3
+                    VerifyText             ${Text_value}                 
             END   
         END
     END
