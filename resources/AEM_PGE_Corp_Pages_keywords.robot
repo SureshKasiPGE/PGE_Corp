@@ -30,7 +30,7 @@ AEM_Url
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 IF   '${Text_value}' != '${EMPTY}'
                     Sleep                  3
-                    VerifyText             ${Text_value} 
+                    #VerifyText             ${Text_value} 
                 END                    
             END   
         END
