@@ -19,7 +19,7 @@ AEM_Url
                 ${Link_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 ClickText              ${Link_value}
                 CloseWindow
-            ELSE
+            ELSE IF  '${Header_type}' ==   'Link_Text1'
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 VerifyText             ${Text_value}                 
             END
