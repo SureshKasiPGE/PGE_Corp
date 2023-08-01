@@ -9,3 +9,10 @@ Suite Teardown          End Suite
 
 AEM_Pages_validation                   
     AEM_Url     2
+
+
+Test
+    FOR         ${i}                        IN RANGE                           4   0     -1
+        Get Variable Value                  ${i}
+    END
+         
