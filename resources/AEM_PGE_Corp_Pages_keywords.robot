@@ -9,6 +9,6 @@ Resource                common.resource
 AEM_Url
     [Arguments]    ${Column}    ${Row}
     ${Url}=    Get Excel Cell Value By Column Name    ${Column}   ${Row}    AEM 
-    Log        ${Url}
-    GoTo    ${Url}    
+    GoTo    ${Url}   
+     
 
