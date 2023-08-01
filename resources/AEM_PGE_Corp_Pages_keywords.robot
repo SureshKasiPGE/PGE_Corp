@@ -1,6 +1,5 @@
 *** Settings ***
 Resource                  common.resource
-Library                         BuiltIn
 
 *** Variables ***
 
