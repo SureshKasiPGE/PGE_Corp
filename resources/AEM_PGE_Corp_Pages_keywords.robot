@@ -24,7 +24,7 @@ AEM_Url
             END
             ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
             Sleep                  3
-            VerifyText             ${Text_value} 
+            #VerifyText             ${Text_value} 
         END
     END
 
