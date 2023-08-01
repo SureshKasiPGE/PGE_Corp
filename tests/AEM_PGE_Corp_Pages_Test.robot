@@ -7,5 +7,5 @@ Suite Teardown          End Suite
 
 *** Test Cases ***
 
-AccountNumberinvalid_error_validation                   
+AEM_Pages_validation                   
     AEM_Url    1    2
