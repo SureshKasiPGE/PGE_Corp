@@ -18,7 +18,7 @@ AEM_Url
             ${Header_type}=                           Get Excel Cell Value By Column Name    ${j}    1    AEM
             IF            '${Header_type}' == 'Link_Text'
                 ${Link_value}=                        Get Excel Cell Value By Column Name    ${j}    ${i}    AEM
-                IF        '${Link_value}' !=          '${empty}'
+                IF        '${Link_value}' !=          '${EMPTY}'
                 Sleep     3
                 ClickText                             ${Link_value}
                 Sleep     3
