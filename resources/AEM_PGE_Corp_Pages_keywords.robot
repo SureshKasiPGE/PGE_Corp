@@ -23,7 +23,7 @@ AEM_Url
                 SwitchWindow           2
                 Sleep                  3
                 CloseWindow  
-            ELSE IF                   '${Text_value}' !=   '${EMPTY}'
+            ELSE IF                   '${Text_value}' != '${EMPTY}'
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 Sleep                  3
                 #VerifyText             ${Text_value}                 
