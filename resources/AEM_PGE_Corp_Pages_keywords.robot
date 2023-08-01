@@ -4,10 +4,7 @@ Library                         QForce
 Library                         String
 Library                         QVision
 Library                         BuiltIn
-Library                         OperatingSystem
-Library                         Collections
-Library                         SeleniumLibrary
-Library                         DateTime
+
 *** Variables ***
 
 
