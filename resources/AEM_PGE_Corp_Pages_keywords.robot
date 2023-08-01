@@ -23,15 +23,12 @@ AEM_Url
                 Sleep                  3
                 SwitchWindow           2
                 Sleep                  3
-                CloseWindow             
-            END
-            ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
-            
-            IF   '${Text_value}' !=   ${empty}  
+                CloseWindow  
+            ELSE IF                   '${Text_value}' !=   'Null'
+                ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 Sleep                  3
-                #VerifyText             ${Text_value} 
-            END
-            
+                #VerifyText             ${Text_value}                 
+            END   
         END
     END
 
