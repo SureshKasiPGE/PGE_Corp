@@ -24,8 +24,7 @@ End Suite
 
 Get Excel Cell Value By Column Name
     [Arguments]                 ${colNum}                   ${rowNum}     ${sheet}
-    Log                        ${excel_worksheet}
-    Open Excel Document         ${excel_worksheet}          doc_1
+    Open Excel Document         ${excel_worksheet_AEM}          doc_1
     ${testdata}=                Read Excel Cell             ${rowNum}     ${colNum}                   ${sheet}
     Get Variable Value          ${testdata}
     Close Current Excel Document
