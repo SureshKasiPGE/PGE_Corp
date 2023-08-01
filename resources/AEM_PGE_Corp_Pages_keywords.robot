@@ -20,6 +20,7 @@ AEM_Url
                 ${Link_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 Sleep                  3
                 ClickText              ${Link_value}
+                Sleep                  3
                 CloseWindow                
             END
             ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
