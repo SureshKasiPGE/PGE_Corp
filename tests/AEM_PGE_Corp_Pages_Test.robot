@@ -8,4 +8,4 @@ Suite Teardown          End Suite
 *** Test Cases ***
 
 AccountNumberinvalid_error_validation                   
-    AEM_Url    1    1
+    AEM_Url    1    2
