@@ -10,7 +10,4 @@ Suite Teardown          End Suite
 AEM_Pages_validation                   
     AEM_Url     2
 
-
-Test
-    forloop
          
