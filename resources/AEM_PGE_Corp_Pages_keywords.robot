@@ -1,6 +1,6 @@
 *** Settings ***
 Resource                  common.resource
-
+Library                         BuiltIn
 
 *** Variables ***
 
@@ -28,6 +28,10 @@ AEM_Url
             ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
             Sleep                  3
             #VerifyText             ${Text_value} 
+            IF   '${Text_value}' != ${emp}   
+                
+            END
+            
         END
     END
 
