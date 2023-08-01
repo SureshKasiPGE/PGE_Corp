@@ -19,12 +19,13 @@ AEM_Url
             IF            '${Header_type}' == 'Link_Text'
                 ${Link_value}=                        Get Excel Cell Value By Column Name    ${j}    ${i}    AEM
                 IF        '${Link_value}' !=          '${EMPTY}'
-                Sleep     3
-                ClickText                             ${Link_value}
-                Sleep     3
-                SwitchWindow                          2
-                Sleep     3
-                CloseWindow
+                    Sleep     3
+                    ClickText                             ${Link_value}
+                    Sleep     3
+                    SwitchWindow                          2
+                    Sleep     3
+                    CloseWindow
+                END
             END
 
         END
