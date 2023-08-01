@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                common.resource
+Resource                  common.resource
 
 *** Variables ***
 
@@ -7,13 +7,23 @@ Resource                common.resource
 *** Keywords ***
 
 AEM_Url
-    [Arguments]     ${RowLast}
-    FOR    ${i}    IN RANGE     2    ${RowLast}   
-        ${Url}=    Get Excel Cell Value By Column Name    1   ${i}    AEM 
-        GoTo    ${Url}
-        ${count}=   Get Excel Cell Value By Column Name   2   ${i}    AEM 
-        Get Variable Value                        ${count}
-        Log                        ${count}
+    [Arguments]           ${RowLast}
+    FOR                   ${i}                        IN RANGE    2           ${RowLast}
+        ${Url}=           Get Excel Cell Value By Column Name     1           ${i}          AEM
+        GoTo              ${Url}
+        ${count}=         Get Excel Cell Value By Column Name     2           ${i}          AEM
+        Get Variable Value                            ${count}
+        FOR               ${j}                        IN RANGE    3                        ${count}     
+            ${Header_type}=         Get Excel Cell Value By Column Name     ${j}           1          AEM
+            IF   '${Header_type}' ==   'Link_Text1'  or  '${Header_type}' ==   'Link_Text3'
+                ${Link_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
+                ClickText              ${Link_value}
+                CloseWindow
+            ELSE
+                ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
+                VerifyText             ${Text_value}                 
+            END
+        END
     END
-                           
+
 
