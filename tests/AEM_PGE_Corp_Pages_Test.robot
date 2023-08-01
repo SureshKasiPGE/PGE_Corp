@@ -8,4 +8,4 @@ Suite Teardown          End Suite
 *** Test Cases ***
 
 AEM_Pages_validation                   
-    AEM_Url    1    2
+    AEM_Url     2
