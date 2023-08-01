@@ -13,6 +13,7 @@ AEM_Url
         GoTo    ${Url}
         ${count}=   Get Excel Cell Value By Column Name   2   ${i}    AEM 
         Get Variable Value                        ${count}
+        Log                        ${count}
     END
                            
 
