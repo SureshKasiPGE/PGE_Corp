@@ -12,7 +12,5 @@ AEM_Pages_validation
 
 
 Test
-    FOR         ${i}                        IN RANGE                           4   0     -1
-        Get Variable Value                  ${i}
-    END
+    forloop
          
