@@ -26,7 +26,7 @@ AEM_Url
                     Sleep                  3
                     CloseWindow  
                 END    
-            ELSE IF   '${Text_value}' != 'Link_Text'
+            ELSE IF   '${Header_type}' != 'Link_Text'
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 IF   '${Text_value}' != '${EMPTY}'
                     Sleep                  3
