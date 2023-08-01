@@ -15,5 +15,8 @@ AEM_Url
         Get Variable Value                        ${count}
     END
                            
-
+forloop
+    FOR         ${i}                        IN RANGE                           4   0     -1
+        Get Variable Value                  ${i}
+    END
 
