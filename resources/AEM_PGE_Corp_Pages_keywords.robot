@@ -1,9 +1,6 @@
 *** Settings ***
 Resource                  common.resource
-Library                         QForce
-Library                         String
-Library                         QVision
-Library                         BuiltIn
+
 
 *** Variables ***
 
