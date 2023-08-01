@@ -26,10 +26,10 @@ AEM_Url
                 CloseWindow             
             END
             ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
-            Sleep                  3
-            #VerifyText             ${Text_value} 
+            
             IF   '${Text_value}' !=   ${empty}  
-                
+                Sleep                  3
+                #VerifyText             ${Text_value} 
             END
             
         END
