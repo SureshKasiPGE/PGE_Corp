@@ -21,6 +21,8 @@ AEM_Url
                 Sleep                  3
                 ClickText              ${Link_value}
                 Sleep                  3
+                SwitchWindow           2
+                Sleep                  3
                 CloseWindow                
             END
             ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
