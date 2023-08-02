@@ -12,8 +12,10 @@ AEM_Pages_validation
 
 Test
     ${Text_value}=         Get Excel Cell Value By Column Name     25        2             AEM
+    #${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value}
     ${Text_value1}=         Get Excel Cell Value By Column Name     13        2             AEM
-    Get Variable Value     ${Text_value}  
-    IF   '${Text_value1}' == '${empty}'
-        Get Variable Value     ${Text_value1}
+    ${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value1}
+    Get Variable Value     ${Removed_Qouates_value}  
+    IF   '${Text_value}' == '${EMPTY}'
+        Get Variable Value     ${Removed_Qouates_value}
     END   
