@@ -11,5 +11,5 @@ AEM_Pages_validation
     AEM_Url     3
 
 Test
-    ${Text_value}=         Get Excel Cell Value By Column Name     11        2             AEM
+    ${Text_value}=         Get Excel Cell Value By Column Name     25        2             AEM
     Get Variable Value     ${Text_value}     
