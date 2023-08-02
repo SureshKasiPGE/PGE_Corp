@@ -15,7 +15,8 @@ Test
     #${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value}
     ${Text_value1}=         Get Excel Cell Value By Column Name     13        2             AEM
     ${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value1}
-    Get Variable Value     ${Removed_Qouates_value}  
-    IF   '${Text_value}' == '${EMPTY}'
+    Get Variable Value     ${Removed_Qouates_value} 
+    ${VALUE1}              RemoveSpace            ${Text_value}
+    IF   '${VALUE1}' == '${EMPTY}'
         Get Variable Value     ${Removed_Qouates_value}
     END   
