@@ -30,3 +30,8 @@ Get Excel Cell Value By Column Name
     Get Variable Value          ${testdata}
     Close Current Excel Document
     Return From Keyword         ${testdata}
+    
+RemoveDoubleQuote
+    [Arguments]                 ${serviceID_test}
+    ${Value}=                   Remove String               ${serviceID_test}           "
+    Return From Keyword         ${Value}    
