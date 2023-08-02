@@ -30,7 +30,7 @@ AEM_Url
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 #${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value}
                 #${finalvalue}=                        RemoveSingleQuote                 ${Removed_Qouates_value}
-                IF   '${Text_value}' != '${EMPTY}'
+                IF   '${Text_value}' != '${empty}'
                     Sleep                  3
                     #VerifyText             ${Text_value} 
                 END                    
