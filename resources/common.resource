@@ -34,5 +34,9 @@ Get Excel Cell Value By Column Name
 RemoveDoubleQuote
     [Arguments]                 ${serviceID_test}
     ${Value}=                   Remove String               ${serviceID_test}           "
-    Get Variable Value          ${Value}
     Return From Keyword         ${Value}    
+
+RemoveSingleQuote
+    [Arguments]                 ${serviceID_test}
+    ${Value}=                   Remove String               ${serviceID_test}           '
+    Return From Keyword         ${Value}     
