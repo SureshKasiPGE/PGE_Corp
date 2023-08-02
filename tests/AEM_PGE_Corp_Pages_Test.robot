@@ -12,4 +12,4 @@ AEM_Pages_validation
 
 Test
     ${Text_value}=         Get Excel Cell Value By Column Name     11        2             AEM
-         
+    Get Variable Value     ${Text_value}     
