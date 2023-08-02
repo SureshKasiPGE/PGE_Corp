@@ -17,6 +17,7 @@ Test
     ${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value1}
     Get Variable Value     ${Removed_Qouates_value} 
     #${VALUE1}              RemoveSpace            ${Text_value}
+    Convert To String      ${Text_value1}
     IF   "${Text_value1}" != "${EMPTY}"
         Get Variable Value     ${Removed_Qouates_value}
     END   
