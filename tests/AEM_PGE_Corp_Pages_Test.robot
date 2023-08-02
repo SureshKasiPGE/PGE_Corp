@@ -8,7 +8,7 @@ Suite Teardown          End Suite
 *** Test Cases ***
 
 AEM_Pages_validation                   
-    AEM_Url     4
+    AEM_Url     3
 
 Test
     ${Text_value}=         Get Excel Cell Value By Column Name     25        2             AEM
