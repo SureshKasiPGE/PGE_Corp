@@ -10,4 +10,6 @@ Suite Teardown          End Suite
 AEM_Pages_validation                   
     AEM_Url     3
 
+Test
+    ${Text_value}=         Get Excel Cell Value By Column Name     11        2             AEM
          
