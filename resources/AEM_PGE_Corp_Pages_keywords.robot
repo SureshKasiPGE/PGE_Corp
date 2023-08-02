@@ -10,6 +10,7 @@ AEM_Url
     [Arguments]           ${RowLast}
     ${test}=         Get Excel Cell Value By Column Name     11        2             AEM
     Get Variable Value                        ${test}
+    Sleep                        60
     FOR                   ${i}                        IN RANGE    2           ${RowLast}
         ${Url}=           Get Excel Cell Value By Column Name     1           ${i}          AEM
         GoTo              ${Url}
