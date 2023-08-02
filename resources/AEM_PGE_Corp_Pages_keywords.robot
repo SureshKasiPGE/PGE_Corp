@@ -15,7 +15,6 @@ AEM_Url
         Get Variable Value                            ${count}
         FOR               ${j}                        IN RANGE    3                        ${count}     
             ${Header_type}=         Get Excel Cell Value By Column Name     ${j}           1          AEM
-            
             IF   '${Header_type}' == 'Link_Text'                     
                 ${Link_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 IF   '${Link_value}' != '${EMPTY}'
@@ -30,9 +29,9 @@ AEM_Url
                 ${Text_value}=         Get Excel Cell Value By Column Name     ${j}        ${i}             AEM
                 #${Removed_Qouates_value}=                        RemoveDoubleQuote      ${Text_value}
                 #${finalvalue}=                        RemoveSingleQuote                 ${Removed_Qouates_value}
-                IF   '${Text_value}' == '${empty}'
+                IF   '${Text_value}' != '${empty}'
                     Sleep                  3
-                    #VerifyText             ${Text_value} 
+                    VerifyText             ${Text_value} 
                 END                    
             END   
         END
